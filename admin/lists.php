@@ -8,7 +8,8 @@ $result = $crud->getData($query);
 			<?php foreach ($result as $key => $row) { ?>
 				<div class="col-md-4">			<!-- container for the  hotel -->
                     
-					<div class="thumbnail" style="padding:10px;"><img src="images.php?ID=<?php echo $row['ID']; ?>" style="width:150px; height:100px; border-radius:10px;">
+					<div class="thumbnail" style="padding:10px;"><!--<img src="images.php?ID=<?php echo $row['ID']; ?>" style="width:150px; height:100px; border-radius:10px;">-->
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZj81URVV_-wtFcfI8ir_ANNKeqU44iTzNmlETxi6mEXMR7hFQ" style="height:150px; ">
                         <div class="caption"><br>
                             <center><h4><?php echo limitText($row['ProductName'],20);?></h4></center>
                             <p><i class="fa fa-location-arrow"></i><?php echo limitText($row['ProductDescription'],50);?> </p>
