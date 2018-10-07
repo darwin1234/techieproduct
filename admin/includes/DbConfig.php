@@ -4,7 +4,7 @@ class DbConfig
 	private $_host = 'localhost';
 	private $_username = 'root';
 	private $_password = '';
-	private $_database = 'grabhotel1';
+	private $_database = 'techieproduct';
 
 	protected $connection;
 	

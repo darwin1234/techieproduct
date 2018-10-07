@@ -10,7 +10,7 @@
 			
 			<div class="wrapper">
 			<h1><center>
-			Hotel List
+			Product Logs
 			</h1></center><br>
 		
 				
@@ -57,6 +57,6 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClQwnk_NG4x6ezaiWpAEJrR1PfZTkQq-s&libraries=places&callback=initAutocomplete" async defer></script>
 <script src="../vendor/jquery/jquery.min.js"></script>
 <script src="../vendor/tether/tether.min.js"></script>
- <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <?php require_once('templates/footer.php'); ?>

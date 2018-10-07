@@ -1,10 +1,10 @@
 <div id="video-background">
 	<div class="intro-content">
 	<form  action="FindHotel.php" method="POST">
-		<img src="images/grabhotel.png" style="width:300px; height:100px;margin:50px auto; display:block; ">
+		
 			<div class="form-group">
 				<div id="locationField">
-					<input id="autocomplete" class="form-control" name="HotelAddress" placeholder="Search Near Hotel" onFocus="geolocate()" type="text" style="float:left; width:92%;"><input type="submit" name="searchhotel" class="btn btn-primary" value="Search">
+					<input id="autocomplete" class="form-control" name="HotelAddress" placeholder="Search Near Hotel" onFocus="geolocate()" type="text" style="float:left; width:92%;"><input type="submit" name="searchhotel" class="btn btn-primary" style="background:#FF7434;" value="Search">
 				</div>
 			</div>
 
@@ -18,6 +18,6 @@
 			</div>
 	</form>
 	</div>
-		<video autoplay="" loop=""preload="auto"><source src="template/banner.mp4" style="height:100%; width:100%;" type="video/mp4"></video>
+	
 </div>
 

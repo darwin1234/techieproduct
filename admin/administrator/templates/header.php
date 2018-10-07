@@ -64,6 +64,8 @@ $crud = new Crud();
 		}
 	</script>
 </head>
+
+<body>
   <nav>	<!-- This is the start of the navigation bar for users who visits the website-->
         <div class="container-fluid">		
             <div class="navbar-header">
@@ -78,4 +80,3 @@ $crud = new Crud();
 					</ul>
             </div>
     </nav><br><br><br><br>
-	<body style="background:url(../images/blurred.jpg); height:100%;width: 100%">

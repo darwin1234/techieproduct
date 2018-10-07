@@ -2,7 +2,7 @@
 <?php require_once('connection.php'); ?>
 <?php require_once('template/header.php'); ?>
 <div class="container" style="padding-top:20px; overflow:auto;">
-<?php  $res = mysqli_query($mysqli, "SELECT * FROM hotels WHERE ID="  .$_GET['ID']);  ?>
+<?php  $res = mysqli_query($mysqli, "SELECT * FROM products WHERE productID="  .$_GET['ID']);  ?>
 <?php  $row = mysqli_fetch_assoc($res); ?>
 <form action="payform.php" method="POST">
 <input type="hidden" name="HotelID" value="<?php echo $_GET['ID'];?>">

@@ -4,7 +4,7 @@
 	
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grab Hotel</title>
+    <title>Techie Product</title>
 	<link rel="stylesheet" href="template/style.css">
      <link rel="stylesheet" href="css/Hadouken/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
@@ -53,16 +53,17 @@
 		}
 	</script>
 </head>
+<body>
   <nav>	<!-- This is the start of the navigation bar for users who visits the website-->
-        <div class="container-fluid">		
+        <div class="container-fluid" style="background:#003E52;">		
             <div class="navbar-header">
-                <a class="navbar-brand navbar-link" href="index.php"> <img class="img-responsive" src="images/grabhotel.png" id="logofooter2" style="margin-top:-10px;"></a>
+                <a class="navbar-brand navbar-link" href="index.php">LOGO</a>
                 <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
             </div>
             <div class="collapse navbar-collapse" id="navcol-1">			<!--these are the dropdowns for the website and when the user clicks on the button it would collapse and show more options-->
                 <ul class="nav navbar-nav navbar-right">
 					
-                    <li><a href="profile/FAQ.php">Notification </a></li>
+                    <li><a href="profile/FAQ.php">Logs </a></li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" id="drph">Profile </a>
                         <?php if(!isset($_SESSION['username']) && !isset($_SESSION['ID'] )){ ?>
 						<ul class="dropdown-menu" role="menu">
@@ -96,4 +97,4 @@
             </div>					<!-- End of the dropdown buttons-->
         </div>
     </nav>	
-		<body style="background:url(images/bg.jpg); height:100%;width: 100%">
+		

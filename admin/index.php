@@ -16,7 +16,7 @@
 ?>
    <?php require_once('template/header.php'); ?>
 
-	<?php require_once('searchhotel.php'); ?>
+	<?php require_once('searchproduct.php'); ?>
     <div class="container">
 
 		<?php require_once('lists.php');?>

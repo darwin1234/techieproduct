@@ -37,7 +37,7 @@
 	</head>
   </head>
 
-<body style="background:url(images/bbb.png) no-repeat; height:100%;width: 100%">
+<body>
 <?php 
 session_start();
 
