@@ -1,7 +1,11 @@
 <?php 
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST');
+<<<<<<< HEAD
 $mysqli = new mysqli("localhost", "root", "", "techieproduct");
+=======
+$mysqli = new mysqli("localhost", "root", "", "eljohn");
+>>>>>>> c642a6dae445a93079c13fbfa28046c1c26f0734
 
 if ($mysqli->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
