@@ -1,0 +1,2 @@
+[20-Feb-2018 04:03:06 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/dsese1234/public_html/wp/wp3/wp-content/plugins/dsbooking/pgateway/PayPal/app/start.php on line 3
+[20-Feb-2018 04:03:06 UTC] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/dsese1234/public_html/wp/wp3/wp-content/plugins/dsbooking/pgateway/PayPal/app/start.php on line 3
