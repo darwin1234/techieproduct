@@ -1,46 +1,12 @@
 <?php require_once("utils/utilities.php");?>
-<?php 
-$baseurl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
-?>
+<?php  $baseurl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
 <head>
 	
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Techie Product</title>
 	<link rel="stylesheet" href="template/style.css">
-    <link rel="stylesheet" href="css/Hadouken/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
-    <link rel="stylesheet" href="css/Hadouken/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="css/Hadouken/css/styles.css">
-    <link rel="stylesheet" href="css/Hadouken/css/Bootstrap-Payment-Form.css">
-    <link rel="stylesheet" href="css/Hadouken/css/Google-Style-Login.css">
-    <link rel="stylesheet" href="css/Hadouken/css/Hero-Technology.css">
-	<link rel="stylesheet" href="css/Hadouken/css/untitled.css">
-    <link rel="stylesheet" href="css/Hadouken/css/untitled-1.css">
-    <link rel="stylesheet" href="css/Hadouken/css/untitled-2.css">
-    <link rel="stylesheet" href="css/Hadouken/css/user.css">
-    <link rel="stylesheet" href="css/Hadouken/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/Hadouken/css/Pretty-Footer.css">
-	 <link rel="stylesheet" href="css/Hadouken/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/Hadouken/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="css/Hadouken/css/user.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<link rel="apple-touch-icon" sizes="57x57" href="images/fav/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="images/fav/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="images/fav/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="images/fav/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="images/fav/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="images/fav/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="images/fav/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="images/fav/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="images/fav/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="images/fav/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="images/fav/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="images/fav/favicon-16x16.png">
 	<style>
 	#productlist{max-height: 215px; height: 100%;}
 	#productlist .ProductData{border:1px solid #ccc; margin:5px; padding:10px; height:200px; width:32.3%; float:left; text-align:center;}
