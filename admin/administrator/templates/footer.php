@@ -1,32 +1,4 @@
-	<script src="../js/autocomplete.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClQwnk_NG4x6ezaiWpAEJrR1PfZTkQq-s&libraries=places&callback=initAutocomplete" async defer></script>
-    <script src="../js/jquery.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
 
-	<script>
-	var j = jQuery.noConflict();
-	j(function(){
-		var autosearch ={	
-				autosearch: function(){
-						j("#autosearch").on('submit',function(){
-							
-							alert(1);
-			
-						});
-				},
-				search: function(){
-						j("#search").on("change", function(){
-							
-							alert(2);
-		
-						});
-							
-				}
-		}
-		//alert(1);
-		autosearch.autosearch();
-	});
-	</script>
 
 <footer id="footer">
 					<div class="inner">
@@ -48,7 +20,24 @@
 	  <i class="fa fa-envelope footer-contacts-icon"></i>support@GRABHOTEL.com
 	  
 </footer>
-    
+<script>
+
+	
+	xhttp.onreadystatechange = function() {
+	if (this.readyState == 4 && this.status == 200) {
+	   console.log(this.responseText);
+		
+	}else{
+		console.log("not working!");
+		 //document.getElementById("productList").innerHTML = "<h2 style='text-align:center;'>Cannot load Product Server Error!</h2>";
+	}
+	
+ };
+  xhttp.open("POST", "<?php echo $baseurl;?>/administrator/lists.php", true);
+  xhttp.send();
+  
+
+ </script>
 </body>
 
 </html>

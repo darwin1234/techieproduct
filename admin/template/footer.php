@@ -1,39 +1,34 @@
-	
-	<link rel="stylesheet" href="template/style.css">
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/tether/tether.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script>
-	var j = jQuery.noConflict();
-	j(function(){
-		var autosearch ={	
-				autosearch: function(){
-						j("#autosearch").on('submit',function(){
-							
-							alert(1);
+<link rel="stylesheet" href="template/style.css">
+<footer id="footer"></footer>
+<script type="text/javascript">
+
+var result, HTML = "";
+xhttp.onreadystatechange = function() {
+	if (this.readyState == 4 && this.status == 200) {
+	   result = this.responseText;
+	   result = JSON.parse(result);
+	  
+	   for(var i=0; i < result.length; i++){
+			HTML +=  "<div class='ProductData'>";
+			HTML +=  "<h3>" + result[i].HotelName + "</h3>";
+			HTML +=  "<a href='#'>View Product</a>";
+			HTML +=  "</div>";
 			
-						});
-				},
-				search: function(){
-						j("#search").on("change", function(){
-							
-							alert(2);
+	   }	
+	
+	}else{
 		
-						});
-							
-				}
-		}
-		//alert(1);
-		autosearch.autosearch();
-	});
-	</script>
+		 //document.getElementById("productList").innerHTML = "<h2 style='text-align:center;'>Cannot load Product Server Error!</h2>";
+	}
+	document.getElementById("productList").innerHTML= HTML;
+ };
+  xhttp.open("POST", "<?php echo $baseurl;?>/lists.php", true);
+  xhttp.send();
+  
 
-	
-	<footer id="footer">
-	
-	</footer>
-    
+  
+
+</script>
 </body>
-
 </html>
 

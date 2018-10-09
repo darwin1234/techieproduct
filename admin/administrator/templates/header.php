@@ -1,5 +1,9 @@
 <?php require_once("../utils/utilities.php");?>
 <?php 
+
+$baseurl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+?>
+<?php 
 session_start();
 if($_SESSION['token'] == md5('abcdefghijklmnopqrstuvwxyz123456789')){ 
 $_SESSION['username'];
@@ -16,18 +20,16 @@ $crud = new Crud();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grab Hotel</title>
+    <title>Techie Product</title>
 	<link rel="stylesheet" href="../template/style.css">
     <link rel="stylesheet" href="../css/Hadouken/css/styles.css">
-     <link rel="stylesheet" href="../css/Hadouken/css/untitled.css">
+    <link rel="stylesheet" href="../css/Hadouken/css/untitled.css">
     <link rel="stylesheet" href="../css/Hadouken/css/user.css">
     <link rel="stylesheet" href="../css/Hadouken/css/Pretty-Footer.css">
-	 <link rel="stylesheet" href="../css/Hadouken/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/Hadouken/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/Hadouken/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="../css/Hadouken/css/user.css">
 
-	<script src="../js/jquery.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
 	<link rel="apple-touch-icon" sizes="57x57" href="../images/fav/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="../images/fav/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="../images/fav/apple-icon-72x72.png">
@@ -43,6 +45,7 @@ $crud = new Crud();
 	<link rel="icon" type="image/png" sizes="16x16" href="../images/fav/favicon-16x16.png">
 	
 	<script>
+	var xhttp = new XMLHttpRequest();
 	function deleteImage(){
 		var hotelImage = document.getElementById("hotelImage");
 		hotelImage.innerHTML = '<input type="file" name="HotelLogo" id="HotelLogo">';
@@ -79,4 +82,4 @@ $crud = new Crud();
 					<li> <a href="addhotelowner.php" >Add Hotel Owner</a></li>
 					</ul>
             </div>
-    </nav><br><br><br><br>
+    </nav>
