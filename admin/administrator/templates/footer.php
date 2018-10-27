@@ -1,43 +1,41 @@
 
-
-<footer id="footer">
-					<div class="inner">
-						<center><h2><img class="img-responsive" src="../images/grabhotel.png" id="logofooter2"></center></h2>
-						<h4>About the company</h4>
-						<p>We are a dependent company who is gladly offering to advertise and help people who are in need of a lodge. &nbsp; &nbsp;&nbsp; </p>
-                
-						<ul class="icons">
-							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
-					</div>
-	  
-	  
-	  
-	  <i class="fa fa-phone footer-contacts-icon"></i>+639062345123
-	  <i class="fa fa-envelope footer-contacts-icon"></i>support@GRABHOTEL.com
-	  
-</footer>
 <script>
 
-	
+	var result, HTML = "";
 	xhttp.onreadystatechange = function() {
 	if (this.readyState == 4 && this.status == 200) {
 	   console.log(this.responseText);
-		
+	   
+	    result = this.responseText;
+	   result = JSON.parse(result);
+	   HTML += "<table>";
+	   HTML += "<tr><th>ID</th><th>Company Name</th><th>User Name</th><th>Address</th><th>Contact No.</th><th>Email Address</th><th>Action</th></tr>"
+	   for(var i=0; i < result.length; i++){
+			HTML +=  "<tr>";
+			HTML +=  "<td>" + result[i].ID + "</td>";
+			HTML +=  "<td>"+ result[i].CompanyName +"</td>";
+			HTML +=  "<td>"+ result[i].username +"</td>";
+			HTML +=  "<td>"+ result[i].address +"</td>";
+			HTML +=  "<td>"+ result[i].contactno +"</td>";
+			HTML +=  "<td>"+ result[i].email +"</td>";
+			HTML +=  "<td>"+ "<button>view</button>"+"</td>";
+			HTML +=  "</tr>";
+			
+	   }
+		HTML += "</table>";	   
+		document.getElementById("productlist").innerHTML = HTML;
 	}else{
 		console.log("not working!");
 		 //document.getElementById("productList").innerHTML = "<h2 style='text-align:center;'>Cannot load Product Server Error!</h2>";
 	}
 	
- };
-  xhttp.open("POST", "<?php echo $baseurl;?>/administrator/lists.php", true);
-  xhttp.send();
-  
+	 };
+	  xhttp.open("POST", "http://localhost/techieproduct/admin/administrator/lists.php", true);
+	  xhttp.send();
+	  
 
  </script>
+
 </body>
 
 </html>

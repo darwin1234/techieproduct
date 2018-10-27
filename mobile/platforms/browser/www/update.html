@@ -3,200 +3,129 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-		<link href="https://fonts.googleapis.com/css?family=Mukta:200,300,400,500,600,700,800" rel="stylesheet">
-
-        <title>Eljohn</title>
-		<style>
-		h2{text-align:center;}
-		body{margin:0; padding:0; background:#fff; font-family: 'Mukta', sans-serif;}
-        #itemtitle{width:100%;}
-		#itemtitle li{float:left; width:200px; padding:0; margin:0; background:#34A853;}
-		#dsform{width:100%; } 
-		#dsform input[type="text"],	#dsform input[type="number"],#dsform textarea{width:100%; height:30px; border:0;  }
-		#dsform textarea{height:100px;}
-		#dsform input[type="submit"]{background:#4285F4; color:#fff; width:100%; padding:10px; border:0;}
-		#product {margin-top:20px; clear:both;}
-		#product ul{list-style:none; margin:0; padding:0; clear:both;}
-		#product ul li{float:left; padding:5px; width:200px;}
-		
-	    #product h4{
-			line-height:25px;
-			padding:0;
-			font-size:12px;
-			font-weight:normal;
-			margin:0;}
-		#product h3{
-			line-height:25px;
-			padding:0;
-			margin:0;}
-		#product h5{
-			line-height:25px;
-			padding:0;
-			font-size:12px;
-			font-weight:normal;
-			margin:0;}
-		h2{
-			line-height:25px;
-			padding:0;
-			padding-top:10px;
-			padding-bottom:10px;
-			margin:0;
-			background-color:#3B5998;
-			color:#fff}
-		.buttons{
-			padding:0;
-			margin:0;
-			height:35px;
-			background:#fff;
-			}
-		.buttons .link{
-			width:50%;
-			display:block;
-			float:left;
-			text-align:center;
-			text-decoration:none;
-			color:#ccc;
-			line-height:35px;
-			}
-		.image{
-				
-				height:150px;
-				width:100px;
-				margin-left:10px;
-				float:left;
-				}
-		.image img{
-				height:75px;
-				width:75px;
-				border-radius:100%;
-				border:1px;
-				border-style:solid;
-				border-color:#ccc;
-				}
-	
-		.productData{
-				width:100%;
-				height:100%;
-				border:1px;
-				border-color:#F1F1F1;
-				border-style:solid;
-				}
-				
-	
-		.button {
-				background-color: #4CAF50; /* Green */
-				border: none;
-				color: white;
-				padding: 10px 25px;
-				text-align: center;
-				text-decoration: none;
-				display: inline-block;
-				font-size: 10px;
-				margin: 4px 4px;
-				-webkit-transition-duration: 0.4s; /* Safari */
-				transition-duration: 0.4s;
-				cursor: pointer;
-			}
-		.button1 {
-				background-color: white; 
-				color: black; 
-				border: 2px solid #4CAF50;
-			}
-
-			.button1:hover {
-				background-color: #4CAF50;
-				color: white;
-			}
-		.button3 {
-				background-color: white; 
-				color: black; 
-				border: 2px solid #f44336;
-			}
-
-			.button3:hover {
-				background-color: #f44336;
-				color: white;
-}
-		</style>
-	</head>
-    <body>
-		<h2>PRODUCT X</h2>
-	
-		<form id="dsform">
-			<div id="dsupdate">
+		<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="style3.css">
+        <title>TechieProduct</title>
+		<script type="text/javascript">
+			var xhttp = new XMLHttpRequest();
+			var BaseURL = "http://192.168.8.100/";
+			var ID = localStorage.getItem('prodID');
 			
-			</div>
-
-		</form>
-	
-        
-		<script type="text/javascript" src="cordova.js"></script>
-		<script>
-		var xhttp = new XMLHttpRequest();
-	
-		
-		
-		var submit = document.getElementById("dsform");
-	
-		
-		
-		submit.addEventListener("submit", function(event){
-		var productID = localStorage.getItem("productID");	
-		var ProductName					= document.getElementById("ProductName").value;
-		var ProductCategory				= document.getElementById("ProductCategory").value;
-		var ProductDescription			= document.getElementById("ProductDescription").value;
-		var ProductPrice				= document.getElementById("ProductPrice").value;
-		var ProductImage				= document.getElementById("ProductImage").value;
-			 
-			xhttp.onreadystatechange = function() {
-				if (this.readyState == 4 && this.status == 200) {
-			alert (this.responseText);	  
-				  document.getElementById("product").innerHTML = this.responseText;
-				  displaydata();
-				}
-			};
-			  xhttp.open("POST", "http://192.168.0.5/eljohn/update.php", false);
-			  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			  xhttp.send("ProductName='"+ ProductName +"'&ProductCategory='"+ ProductCategory +"'&ProductDescription='"+ ProductDescription +"'&ProductPrice='"+ ProductPrice +"'&ProductImage='"+ ProductImage +"'&productID='"+ productID +"'");
-		
-			event.preventDefault();
-		
-		});
-		
-		function displaydata(){
-			
-			var productID = localStorage.getItem("productID");	
-			  xhttp.onreadystatechange = function() {
-				if (this.readyState == 4 && this.status == 200) {
-				
-				  document.getElementById("dsupdate").innerHTML = this.responseText;
-				
-				}else{
-				
-					console.log("not working!");
-				}
-			  };
-			  xhttp.open("POST", "http://192.168.0.5/eljohn/view.php", false);
-			  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			  xhttp.send("productID=" + parseInt(productID));
-
-		}
-		function remove(id){
-			alert(id);	
-			xhttp.onreadystatechange = function() {
-			 if(this.readyState == 4 && this.status == 200) 
-				{
-					document.getElementById("product").innerHTML = this.responseText;
+			var result, HTML = "", i =0;
+			xhttp.onreadystatechange = function() 
+			{
+					i++;
 					
-				}
-		      };
-			  xhttp.open("POST", "http://192.168.0.5/eljohn/delete.php", true);
-			  xhttp.setRequestHeader("Content-type", "application/json");
-			  xhttp.send("productID="+ id )		
-		}
-		displaydata();
+					if (this.readyState == 4 && this.status == 200) 
+					{
+							result = this.responseText;
+							result = JSON.parse(result);
+							
+							
+							HTML +="<div id='status'></div>";
+							HTML +="<div class='fields'>";
+							HTML +="<label>Product Name </label>";
+							HTML +="<input type='text' placeholder='name' required id='productname' name='productname' value='" + result.productname + "'>";
+							HTML +="</div>";
+							
+							HTML +="<div class='fields'>";
+							HTML +="<label>Product Category </label>";
+								
+							HTML +="<select required id='productCat' name='productCat'>";
+							HTML +="		<option value='Motherboard'>Motherboard</option>";
+							HTML +="		<option value='Processor'>Processor</option>";
+							HTML +="		<option value='Memory RAM'>Memory RAM</option>";
+							HTML +="		<option value='Power supply'>Power supply</option>";
+							HTML +="		<option value='Floppy drive'>Floppy drive</option>";
+							HTML +="		<option value='Keyboard'>Keyboard</option>";
+							HTML +="		<option value='Mouse'>Mouse</option>";
+							HTML +="		<option value='Monitor'>Monitor</option>";
+							HTML +="		<option value='Video card'>Video card</option>";
+							HTML +="	</select>";
+							HTML +="</div>";
+							
+							HTML +="<div class='fields'>";
+							HTML +="<label>Product Price</label>";
+							HTML +="<input type='number' placeholder='price' required id='productprice' name='productprice' value='"+result.productprice+"'>";
+							HTML +="</div>";
+							
+							HTML +="<div class='fields'>";
+							HTML +="<label>Product Image</label>";
+							HTML +="<input type='text'  placeholder='image' required id='ProductImage' name='ProductImage' value='"+result.productimage+"'>";
+							HTML +="</div>";
+							
+							HTML +="<div class='fields'>";
+							HTML +="<label>Product Description</label><textarea required  placeholder='Description' id='Description' name='Description'>"+result.Description+"</textarea>";
+							HTML +="</div>";
+							
+							HTML +="<input type='submit' id='submit' value='Update'/>"; 
+
+																														
+							
+						
+					}
+					document.getElementById("updateform").innerHTML = HTML;
+				
+			};
+			xhttp.open("POST", BaseURL + "techieproduct/updateform.php", true);
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xhttp.send("ID=" + ID);
+			
 		</script>
 		
-	
+		
+	</head>
+    <body>
+		
+		<h2 style="postion:fixed;"><a style="float:left; color:#fff; background-color:#8b9dc3;"  onclick="w3_open()"></a> <a href="dashboard.html"><img src="image/logo.jpg" style="width:180px;  "></a></h2>
+		<a href="dashboard.html" class="myfloat"><i class="	fa fa-times my-float"  style="font-size:30px"></i></a>	
+		<div style="height:50px"></div>	
+			
+		
+		<div id="dsupdate">
+			<form id="updateform">	
+			</form>
+		
+		</div>
+     
+		<script type="text/javascript" src="cordova.js"></script>
+		
+		<script type="text/javascript">
+			var updateform = document.getElementById("updateform");
+			updateform.addEventListener("submit", function(e){
+			var userinfo = localStorage.getItem("userdata");
+			userinfo = JSON.parse(userinfo);
+			var productname			= document.getElementById('productname');
+			var productCat			= document.getElementById('productCat');
+			var Description			= document.getElementById('Description');
+			var productprice		= document.getElementById('productprice');
+			var ProductImage		= document.getElementById('ProductImage');
+
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) 
+					{
+						alert(this.responseText);
+						window.location.href = 'dashboard.html';
+					
+					}
+				}
+				xhttp.open("POST", BaseURL + "techieproduct/update.php", true);
+				xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				xhttp.send("ID=" + ID + "&productname=" + productname.value + "&productCat=" + productCat.value + "&Description=" + Description.value + "&productprice=" + productprice.value + "&ProductImage=" + ProductImage.value + "&userID=" + "&userID=" + userinfo.ID);
+				e.preventDefault();
+			});
+		</script>
+		<script>
+				function w3_open() {
+			document.getElementById("mySidebar").style.display = "block";
+			
+		}
+		function w3_close() {
+			document.getElementById("mySidebar").style.display = "none";
+		}
+		</script>
+		
 	</body>
 </html>

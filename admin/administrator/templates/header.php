@@ -1,7 +1,7 @@
 <?php require_once("../utils/utilities.php");?>
 <?php 
 
-$baseurl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$baseurl = "http://localhost/techieproduct2";
 ?>
 <?php 
 session_start();
@@ -21,39 +21,13 @@ $crud = new Crud();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Techie Product</title>
-	<link rel="stylesheet" href="../template/style.css">
-    <link rel="stylesheet" href="../css/Hadouken/css/styles.css">
-    <link rel="stylesheet" href="../css/Hadouken/css/untitled.css">
-    <link rel="stylesheet" href="../css/Hadouken/css/user.css">
-    <link rel="stylesheet" href="../css/Hadouken/css/Pretty-Footer.css">
-	<link rel="stylesheet" href="../css/Hadouken/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/Hadouken/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/Hadouken/css/user.css">
-
-	<link rel="apple-touch-icon" sizes="57x57" href="../images/fav/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="../images/fav/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="../images/fav/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="../images/fav/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="../images/fav/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="../images/fav/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="../images/fav/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="../images/fav/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="../images/fav/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="../images/fav/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="../images/fav/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="../images/fav/favicon-16x16.png">
+	<link rel="stylesheet" href="templates/header.css">
+	<link rel="stylesheet" href="templates/form.css">
 	
-	<script>
-	var xhttp = new XMLHttpRequest();
-	function deleteImage(){
-		var hotelImage = document.getElementById("hotelImage");
-		hotelImage.innerHTML = '<input type="file" name="HotelLogo" id="HotelLogo">';
-		
-	}
-</script>
+	
+	
 
-<script>
+	<script>
 		function logout(){
 			
 		
@@ -69,17 +43,16 @@ $crud = new Crud();
 </head>
 
 <body>
-  <nav>	<!-- This is the start of the navigation bar for users who visits the website-->
-        <div class="container-fluid">		
-            <div class="navbar-header">
-                <a class="navbar-brand navbar-link" href="index.php"> <img class="img-responsive" src="../images/grabhotel.png" id="logofooter2" style="margin-top:-10px; "></a>
-                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-            </div>
-					<ul>
+  <header><!-- This is the start of the navigation bar for users who visits the website-->
+         <div  style="background:#8b9dc3; overflow:auto;">		
+           
+              <h2><a href="index.php"><img src="../images/logo.jpg" href="index.php" style="width:180px; margin-top:12px; margin-left:5px;"></a></h2>
+                  
+					<ul class="navright">
+					
+					<li> <a  href="index.php">Supplier List</a></li>
+					<li> <a href="addsupplier.php" >Add Supplier</a></li>
 					<li> <a href="javascript:void();" onclick="logout()">Logout</a></li>
-					<li> <a href="customer.php">Customer</span></a></li>
-					<li> <a  href="index.php">Hotel List</span></a></li>
-					<li> <a href="addhotelowner.php" >Add Hotel Owner</a></li>
 					</ul>
             </div>
-    </nav>
+  </header>

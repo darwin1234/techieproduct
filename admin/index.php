@@ -7,17 +7,16 @@
 <?php 
 	if(@$_SESSION['usertype']==1){
 		header("location:administrator/index.php");
-	}else if(@$_SESSION['usertype']==2){
-		header("location:hotelowner/index.php");
-}
 
+	}else if(@$_SESSION['usertype']==3){
+		header("location:profile/index.php");
+	}
 	
 ?>
    <?php require_once('template/header.php'); ?>
+    <div>
+	<?php require_once('lists.php');?>
 
-	<?php require_once('searchproduct.php'); ?>
-    <div id="productList" class="container">
-	
 	</div>
    
 <script type="text/javascript" src="js/autocomplete.js"></script>

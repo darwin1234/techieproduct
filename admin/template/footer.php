@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="template/style.css">
+
 <footer id="footer"></footer>
 <script type="text/javascript">
 
@@ -26,8 +26,17 @@ xhttp.onreadystatechange = function() {
   xhttp.send();
   
 
-  
-
+</script>
+<script>
+	var xhttp = new XMLHttpRequest();
+				
+	function logout(){		
+			var r = confirm("Do you want to logout?");
+			if (r == true) {
+				window.location ="logout.php";
+			} else {
+		}			
+	}
 </script>
 </body>
 </html>

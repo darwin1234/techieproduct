@@ -1,5 +1,7 @@
 <?php require_once('templates/header.php'); ?>
-<div>
+
+
+<div class="wrapper"id="productlist">
 
 </div>
 	

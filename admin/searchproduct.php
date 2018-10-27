@@ -1,4 +1,4 @@
-<div id="video-background">
+
 	<div class="intro-content">
 	<form  action="FindHotel.php" method="POST">
 		
@@ -19,5 +19,5 @@
 	</form>
 	</div>
 	
-</div>
+
 

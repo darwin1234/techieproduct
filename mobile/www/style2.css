@@ -1,0 +1,251 @@
+﻿.login {
+	width: auto;
+	height: auto;
+	margin: 100px auto;
+	padding: 50px;
+	background-color: #8b9dc3;
+	overflow: hidden;
+}
+.login input[type=text] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 3px solid #ccc;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	outline: none;
+	border-radius: 100px;
+}
+.login input[type=number] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 3px solid #ccc;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	outline: none;
+	border-radius: 100px;
+}
+.login input[type=text]:focus {
+	background-color: #dfe3ee;
+}
+.login input[type=number]:focus {
+	background-color: #dfe3ee;
+}
+.login input[type=submit] {
+	width: 100%;
+	background-color: #3B5998;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.login input[type=submit]:hover {
+	background-color: #dfe3ee;
+}
+.login input[type=button] {
+	width: 100%;
+	background-color: #3B5998;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.login input[type=button]:hover {
+	background-color: #dfe3ee;
+}
+.login input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 3px solid #ccc;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	outline: none;
+	border-radius: 100px;
+}
+.login input[type=password]:focus {
+	background-color: #dfe3ee;
+}
+.login textarea {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 3px solid #ccc;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	outline: none;
+	border-radius: 20px;
+}
+.login textarea:focus {
+	background-color: dfe3ee;
+}
+label {
+	color: #3b5998;
+	font-family: 'Scada', sans-serif;
+}
+body {
+	margin: 0;
+	padding: 0;
+	background: #e9eaee;
+	font-family: 'PT Sans Narrow', sans-serif;
+}
+#itemtitle {
+	width: 100%;
+}
+#itemtitle li {
+	float: left;
+	width: 200px;
+	padding: 0;
+	margin: 0;
+	background: #34A853;
+}
+#dsform {
+	width: 90%;
+	margin: 20px auto;
+	display: none;
+}
+#dsform input[type="text"], #dsform input[type="number"], #dsform textarea {
+	width: 100%;
+	height: 30px;
+	border: 0;
+}
+#dsform textarea {
+	height: 100px;
+}
+#dsform input[type="submit"] {
+	background: #4285F4;
+	color: #fff;
+	width: 100%;
+	padding: 10px;
+	border: 0;
+}
+#product {
+	margin-top: 20px;
+	clear: both;
+}
+#product ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	clear: both;
+}
+#product ul li {
+	float: left;
+	padding: 5px;
+	width: 200px;
+}
+#product h4 {
+	line-height: 20px;
+	padding: 0;
+	font-size: 12px;
+	font-weight: normal;
+	margin-left: 15px;
+}
+#product h3 {
+	line-height: 20px;
+	padding: 0;
+	margin-top: 5px;
+	font-size: 15px;
+	margin-left: 15px;
+}
+#product h5 {
+	line-height: 20px;
+	padding: 0;
+	font-size: 12px;
+	font-weight: normal;
+	margin-left: 15px;
+
+}
+h2 {
+	line-height: 50px;
+	padding: 0;
+	padding-top: 7px;
+	padding-bottom: 3px;
+	margin: 0;
+	background-color: #8b9dc3;
+	color: #fff;
+	text-align: center;
+	position:fixed;
+	top:0;
+	z-index:1;
+	width:100%;
+
+}
+.buttons {
+	padding: 0;
+	margin: 0;
+	height: 30px;
+	background: #fff;
+}
+.buttons .link {
+	width: 50%;
+	display: block;
+	float: left;
+	text-align: center;
+	text-decoration: none;
+	color: #ccc;
+	line-height: 35px;
+}
+.image {
+	height: 100%;
+	width: 100%;
+	
+}
+.image img {
+	height: 80%;
+	width: 100%;
+	margin-top: 10px;
+	border: 1px;
+	border-style: solid;
+	border-color: #ccc;
+}
+.productData {
+	padding-bottom: 10px;
+	border-top: 2px solid #ffffff!important;
+	background-color:#ffffff;
+}
+.productData2 {
+	border-bottom: 1px solid #ffffff!important;
+	border-top: 1px solid #dfe3ee!important;
+	margin-bottom: 15px;
+	padding-bottom: 5px;
+	background-color:#ffffff;
+	position: relative;
+}
+.button {
+	border: none;
+	color: black;
+	padding: 10px 15px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 10px;
+	margin: 5px 5px;
+	width:45%;
+	margin-left:10px;
+	background-color:#ffffff;
+}
+
+.myfloat {
+	position: fixed;
+	width: 60px;
+	height: 60px;
+	bottom: 30px;
+	right: 20px;
+	background-color: #3a5998;
+	color: #FFF;
+	border-radius: 50px;
+	text-align: center;
+	z-index:1111111111;
+}
+.my-float {
+	margin-top: 16px;
+}
