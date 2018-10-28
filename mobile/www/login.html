@@ -35,12 +35,13 @@
 		<script type="text/javascript" src="cordova.js"></script>
 		
 		<script type="text/javascript">
-		var BaseURL = "http://192.168.8.100/";
+		var BaseURL = "http://mobile_server.local/";
 		var login = document.getElementById("login");
 		var xhttp = new XMLHttpRequest();
 		
 		login.addEventListener("submit", function(e)
 		{
+			alert(1);
 			var username = document.getElementById("username");
 			var password = document.getElementById("password");
 			var  info    = document.getElementById("info");
