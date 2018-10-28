@@ -8,7 +8,13 @@
 		<link rel="stylesheet" href="style2.css">
         <title>TechieProduct</title>
 		<script>
-			window.location.href = 'login.html';
+			var userinfo = localStorage.getItem("userdata");
+			userinfo = JSON.parse(userinfo);	
+			if(localStorage.getItem("userdata")){
+				window.location.href = 'dashboard.html';
+			}else{
+				window.location.href = 'login.html';
+			}
 		</script>
 
 	</head>
