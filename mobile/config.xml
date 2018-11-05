@@ -2,7 +2,7 @@
 <widget id="com.eljohn" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>TechieProduct</name>
     <description>
-       califoripa
+       caiforipa
     </description>
     <author email="support@phonegap.com" href="http://phonegap.com">
         PhoneGap Team
@@ -12,6 +12,7 @@
     <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
 	</feature>
     <plugin name="cordova-plugin-whitelist" source="npm" />
+	
 	
 	<preference name="phonegap-version" value="cli-8.0.0" />
     <access origin="*" />

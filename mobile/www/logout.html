@@ -1,4 +1,13 @@
+<!--logout script-->
 <script>
-localStorage.removeItem('userdata');
-window.location.href = 'login.html';
+ if (confirm('Are you sure you want to Log out?')){
+		
+		window.location.href = 'login.html';
+		localStorage.clear();
+	}
+else {
+		window.location.href = 'dashboard.html';
+	}
+
 </script>
+

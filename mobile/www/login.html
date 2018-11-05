@@ -1,47 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
+	<!--head-->
+   <head>
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 		<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="style.css">
-		<link rel="stylesheet" href="style2.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/style2.css">
+		<link rel="stylesheet" href="css/loader.css">
+		
         <title>TechieProduct</title>
 		
+		<script>
+		var test = localStorage.getItem("userdata");
+			test = JSON.parse(test);
+			if (test != null){
+			window.location.href = 'dashboard.html';
+			}
+		</script>
 		
 	</head>
-    <body style="background: #8b9dc3">
-		
+    <!--body-->
+	<body onload="myFunction()" style="margin:0;background: #8b9dc3;">
 	
-		<!--Reder all content-->
-		<div class="login">
-			<a href="login.html"><center><img src="logo.jpg" style="width:250px; display:block; "></center></a>
+	<!--loader-->
+	<div id="loader"><img src="image/tp.png" style="width:250px; display:block; "></div>
+		<!--Login form-->
+		<div class="login animate-bottom" id="myDiv">
+			<center><img src="image/logo.jpg" style="width:250px; display:block; "></center>
+			
 			<form id="login" method="POST">
-			<label for="email">Username:</label>
-				<input type="text" id= "username" name="username" placeholder="Email address" required="" class="form-control">				 
-				<label for="pwd">Password:</label>
-				<input type="password" id="password" name="password" placeholder="Password" required="" class="form-control">
-				 <br>				  
-			<input type="submit" name="login" class="buttonlogin"  value="Login"><br><br>				 
-			<!--<a href="forgotpassword.php" class="button" ><label>Forgot Password</label></a>!-->
+			<label style="float:left" for="email">Username:</label>
+				<input type="text" id= "username" name="username" placeholder="Username" required="" class="form-control">				 
+			<label style="float:left" for="pwd">Password:</label>
+				<input type="password" id="password" name="password" placeholder="Password" required="" class="form-control"><br>				  
+			<input type="submit" name="login" class="button login"  value="Login"><br>			 	
 			</form>
-		</div>	
+			
+			
+			<div style="padding:20px; padding-top:2px;">
+			<a style="color:#FFFFFF; float:left; font-size:10pt;"onclick="document.getElementById('register').style.display='block'">No Account Yet?</a>
+			<a style="color:#FFFFFF; float:right;font-size:10pt;"onclick="document.getElementById('register').style.display='block'">Forgot Password?</a>
+			</div>
+			<div class="w3-center" id="info"></div>
+			
+		</div>
+		
+		<!--register modal-->
+		<div id="register" class="w3-modal  w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="register ">
+		<div class="w3-animate-zoom ">
+			<div class="w3-container w3-tag w3-large w3-padding w3-orange w3-center ">
+			   <img src="image/dead.png" style="width:100%">
+			   <p><strong>PLEASE CONTACT THE ADMIN FOR SOME VERIFICATION!</strong></p>
+			</div>
+		  </div>
+		</div>
         
-		
-		
-		
-		
+		<!--script-->
 		<script type="text/javascript" src="cordova.js"></script>
-		
 		<script type="text/javascript">
-		var BaseURL = "http://192.168.0.183/mobile_server/";
+		var BaseURL = "http://192.168.0.183/";
 		var login = document.getElementById("login");
 		var xhttp = new XMLHttpRequest();
 		
 		login.addEventListener("submit", function(e)
 		{
-			
 			var username = document.getElementById("username");
 			var password = document.getElementById("password");
 			var  info    = document.getElementById("info");
@@ -54,24 +77,23 @@
 					 || this.response == 'null' 
 					 || this.responseText == 0 )
 					 {
-					 info.innerHTML ="<p>Invalid Username or Password!</p>";
+					 info.innerHTML ="<p class=' w3-animate-top w3-tag w3-large w3-padding w3-orange w3-center' style=' border-radius:10px'>Invalid Username or Password!</p>";
 					 }
 					else
 					{
-						window.location.href = 'dashboard.html';
-						localStorage.setItem("userdata",this.responseText);
+							window.location.href = 'dashboard.html';
+							localStorage.setItem("userdata",this.responseText);
 					}
 
 				}else{
 					
 					console.log("Server Error!");
-					//info.innerHTML ="<p style='text-align:center; color:red;'>Server Error!</p>";
 				
 				}
-					
+				info();	
 			};
 			
-			xhttp.open("POST", BaseURL + "/techieproduct/verify.php", true);
+			xhttp.open("POST", BaseURL + "/mobile_server/techieproduct/verify.php", true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");		 
 			xhttp.send("username="+ username.value + "&password="+ password.value);
 			e.preventDefault();
@@ -80,6 +102,31 @@
 
 		</script>
 		
+		<script>
+			function w3_open()	{
+					document.getElementById("register").style.display = "block";
+					document.getElementById("register").style.display = "block";
+					}
+			function w3_close()	{
+					document.getElementById("register").style.display = "none";
+					document.getElementById("register").style.display = "none";
+					}
+					
+		</script>
+		
+		<!--loader script-->
+		<script>
+		var myVar;
+
+		function myFunction() {
+			myVar = setTimeout(showPage, 2000);
+		}
+
+		function showPage() {
+		  document.getElementById("loader").style.display = "none";
+		  document.getElementById("myDiv").style.display = "block";
+		}
+		</script>
 		
 	</body>
 </html>

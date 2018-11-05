@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <!--head-->
+	<head>
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 		<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="style.css">
-		<link rel="stylesheet" href="style3.css">
+		
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/style3.css">
+		<link rel="stylesheet" href="css/style4.css">
+		<link rel="stylesheet" href="css/loader.css">
+		
         <title>TechieProduct</title>
+		
+		<script>
+		var test = localStorage.getItem("userdata");
+			test = JSON.parse(test);
+			if (test == null){
+			window.location.href = 'login.html';
+			}
+		</script>
+		
 		<script type="text/javascript">
 			var xhttp = new XMLHttpRequest();
-			var BaseURL = "http://192.168.0.183/mobile_server/";
-			var ID = localStorage.getItem('prodID');
-			
+			var BaseURL = "http://192.168.0.183/";
+			var ID = localStorage.getItem('prodID');		
 			var result, HTML = "", i =0;
 			xhttp.onreadystatechange = function() 
 			{
@@ -38,7 +50,7 @@
 							HTML +="		<option value='Processor'>Processor</option>";
 							HTML +="		<option value='Memory RAM'>Memory RAM</option>";
 							HTML +="		<option value='Power supply'>Power supply</option>";
-							HTML +="		<option value='Floppy drive'>Floppy drive</option>";
+							HTML +="		<option value='Flash drive'>Flash drive</option>";
 							HTML +="		<option value='Keyboard'>Keyboard</option>";
 							HTML +="		<option value='Mouse'>Mouse</option>";
 							HTML +="		<option value='Monitor'>Monitor</option>";
@@ -69,7 +81,7 @@
 					document.getElementById("updateform").innerHTML = HTML;
 				
 			};
-			xhttp.open("POST", BaseURL + "techieproduct/updateform.php", true);
+			xhttp.open("POST", BaseURL + "mobile_server/techieproduct/updateform.php", true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			xhttp.send("ID=" + ID);
 			
@@ -77,32 +89,35 @@
 		
 		
 	</head>
-    <body>
+	<!--body-->
+    <body onload="myFunction()">
+	<div id="loader"><div style="margin-left:100px; margin-top:100px;" class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+	<div class="animate-bottom" id="myDiv">
 		
 		<h2 style="postion:fixed;"><a style="float:left; color:#fff; background-color:#8b9dc3;"  onclick="w3_open()"></a> <a href="dashboard.html"><img src="image/logo.jpg" style="width:180px;  "></a></h2>
-		<a href="dashboard.html" class="myfloat"><i class="	fa fa-times my-float"  style="font-size:30px"></i></a>	
-		<div style="height:50px"></div>	
+		<a href="dashboard.html" class="myfloat"><i class=" my-float"  style="font-size:30px"></i>cancel</a><div style="height:50px"></div>	
 			
-		
-		<div id="dsupdate">
-			<form id="updateform">	
-			</form>
-		
+	<!--update form-->	
+		<div style="text-align:left;" id="dsupdate">
+			<div class="w3-animate-opacity"><form id="updateform"></form></div>
 		</div>
-     
+		
+		
+     <!--script-->
 		<script type="text/javascript" src="cordova.js"></script>
 		
 		<script type="text/javascript">
 			var updateform = document.getElementById("updateform");
-			updateform.addEventListener("submit", function(e){
 			var userinfo = localStorage.getItem("userdata");
 			userinfo = JSON.parse(userinfo);
+			updateform.addEventListener("submit", function(e){
+		
 			var productname			= document.getElementById('productname');
 			var productCat			= document.getElementById('productCat');
 			var Description			= document.getElementById('Description');
 			var productprice		= document.getElementById('productprice');
 			var ProductImage		= document.getElementById('ProductImage');
-
+			
 				xhttp.onreadystatechange = function() {
 					if (this.readyState == 4 && this.status == 200) 
 					{
@@ -113,19 +128,40 @@
 				}
 				xhttp.open("POST", BaseURL + "techieproduct/update.php", true);
 				xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-				xhttp.send("ID=" + ID + "&productname=" + productname.value + "&productCat=" + productCat.value + "&Description=" + Description.value + "&productprice=" + productprice.value + "&ProductImage=" + ProductImage.value + "&userID=" + "&userID=" + userinfo.ID);
+				xhttp.send("ID=" + ID + "&productname=" + productname.value + "&productCat=" + productCat.value + "&Description=" + Description.value + "&productprice=" + productprice.value + "&ProductImage=" + ProductImage.value + "&userID=" + userinfo[0]+ "&username=" + userinfo[1]);
 				e.preventDefault();
 			});
 		</script>
-		<script>
-				function w3_open() {
-			document.getElementById("mySidebar").style.display = "block";
-			
-		}
-		function w3_close() {
-			document.getElementById("mySidebar").style.display = "none";
-		}
+			<script>
+			function w3_open() {
+				document.getElementById("mySidebar").style.display = "block";
+				document.getElementById("myOverlay").style.display = "block";
+			}
+			function w3_close() {
+				document.getElementById("mySidebar").style.display = "none";
+				document.getElementById("myOverlay").style.display = "none";
+			}
 		</script>
-		
+			<!--loader script-->
+		<script>
+			var myVar;
+
+			function myFunction() {
+				myVar = setTimeout(showPage, 1000);
+			}
+
+			function showPage() {
+			  document.getElementById("loader").style.display = "none";
+			  document.getElementById("myDiv").style.display = "block";
+			}
+			</script>
 	</body>
+	
+	<!--footer-->
+	<footer class="w3-container w3-bottom  w3-margin-top">
+		<center><h4 style="font-size:8pt;"><i>BS-InfoTech 4-B SY:2018-19</i></h4></center>
+	</footer>
+	
+	</div>
+	
 </html>
