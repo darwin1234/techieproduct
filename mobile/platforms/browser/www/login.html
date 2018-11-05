@@ -35,13 +35,13 @@
 		<script type="text/javascript" src="cordova.js"></script>
 		
 		<script type="text/javascript">
-		var BaseURL = "http://mobile_server.local/";
+		var BaseURL = "http://192.168.0.183/mobile_server/";
 		var login = document.getElementById("login");
 		var xhttp = new XMLHttpRequest();
 		
 		login.addEventListener("submit", function(e)
 		{
-			alert(1);
+			
 			var username = document.getElementById("username");
 			var password = document.getElementById("password");
 			var  info    = document.getElementById("info");
@@ -58,8 +58,8 @@
 					 }
 					else
 					{
-							window.location.href = 'dashboard.html';
-							localStorage.setItem("userdata",this.responseText);
+						window.location.href = 'dashboard.html';
+						localStorage.setItem("userdata",this.responseText);
 					}
 
 				}else{
